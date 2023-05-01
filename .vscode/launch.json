@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/2. Reset Öncesi Yedek/AbstractData",
-      "program": "d:/2. Reset Öncesi Yedek/AbstractData/build/Debug/outDebug",
+      "cwd": "c:/Users/hamza/Documents/GitHub/AbstractData",
+      "program": "c:/Users/hamza/Documents/GitHub/AbstractData/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
