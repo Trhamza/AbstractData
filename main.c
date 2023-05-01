@@ -53,7 +53,7 @@ void insertEnd(head **head_, char val)
     }
     else
     {
-        /* önden bakıyoruz */
+       
         while ((*curr)->nxNodePtr != NULL)
         {
             *curr = (*curr)->nxNodePtr; 
@@ -265,7 +265,7 @@ queue_t* createQueue()
     return ptr;
 }
 
-/* sonuna ekler */
+/* add end */
 void enqueue(queue_t *ptr, int value)
 {
     queue_t *qNode = createNode(value);
@@ -279,7 +279,7 @@ void enqueue(queue_t *ptr, int value)
     ptr->rear = qNode;
 }
 
-/* sondan çıkarır */
+/* add remove from end */
 void dequeue(queue_t *ptr)
 {
     if(ptr->front == NULL) return NULL;
@@ -391,13 +391,13 @@ int main()
     
     #ifdef STACKS
     sTop *sTopPtr = NULL;
-    printf("%d 1- bos 0- dolu\n", isEmpty(sTopPtr));
+    printf("%d 1- empty 0- full\n", isEmpty(sTopPtr));
     push(&sTopPtr, 1);
     push(&sTopPtr, 5);
     push(&sTopPtr, 3);
     push(&sTopPtr, 7);
     pop(&sTopPtr);
-    printf("%d 1- bos 0- dolu\n", isEmpty(sTopPtr));
+    printf("%d 1- empty 0- full\n", isEmpty(sTopPtr));
     displayStack(sTopPtr);
     #endif //STACKS 
 
