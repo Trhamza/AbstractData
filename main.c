@@ -176,7 +176,7 @@ void searchVal(head **ptr, char val)
     }
 
     *ptr = tmp;
-    printf("%c degeri %d numarali degerdir\n", val, cnt);
+    printf("%c value is %d numareted value\n", val, cnt);
 
 }
 #endif //LINKED_LIST
@@ -268,7 +268,7 @@ queue_t* createQueue()
 /* add end */
 void enqueue(queue_t *ptr, int value)
 {
-    queue_t *qNode = createNode(value);
+    queuenode_t *qNode = (queuenode_t*)createNode(value);
     if(ptr->rear == NULL)
     {
         ptr->front = ptr->rear = qNode;
@@ -282,7 +282,7 @@ void enqueue(queue_t *ptr, int value)
 /* add remove from end */
 void dequeue(queue_t *ptr)
 {
-    if(ptr->front == NULL) return NULL;
+    if(ptr->front == NULL) return;
 
     queuenode_t *tmp = ptr->front;
     ptr->front = ptr->front->nxtQueueNodePtr;
@@ -296,11 +296,13 @@ void dequeue(queue_t *ptr)
 
 void display(queue_t *q)
 {
-    while (q->front != NULL)
+    queue_t t = *q;
+    while (t.front != NULL)
     {
-        printf("%d --> ", q->front->val);
-        q->front = q->front->nxtQueueNodePtr;
+        printf("%d --> ", t.front->val);
+        t.front = t.front->nxtQueueNodePtr;
     }
+    printf("\n");
 }
 
 #endif /* QUEUE */
@@ -403,8 +405,8 @@ int main()
 
     #ifdef QUEUE
     queue_t *queue = createQueue();
-    enqueue(queue, 1);
-    enqueue(queue, 5);
+    enqueue(queue, 1);display(queue);
+    enqueue(queue, 5);display(queue);
     dequeue(queue);
     display(queue);
     #endif /* QUEUE */
